@@ -1,8 +1,7 @@
 # Research
 [実行コマンド]  
+ ```
  nohup bash -c 'cat experiment.txt | xargs -P 5 -I {} bash exec.sh {}' &   
- ```ruby:qiita.rb
-puts 'The best way to log and share programmers knowledge.'
 ```
   
 [runfile.txt]  
