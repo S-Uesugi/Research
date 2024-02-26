@@ -20,7 +20,7 @@
        nohup bash -c 'cat runfiles.txt | xargs -P 5 -I {} bash exec.sh {}' &   
        ```
       runfiles.txtは適宜実行する実験に合わせて変更してください。
-
+   
 [runfiles.txt]  
 実験するRing-LWEサンプルの変更やアルゴリズムに必要な各パラメータはrunfiles.txtに記載されています。  
 以下は記載されている内容になります。
@@ -34,3 +34,4 @@
 2 : original64_1021  
 3 : original67_1021  
 4 : original81_1021
+**基本的にexp.cppが実験を動かす部分になるので実験について変更などを行う場合はexp.cppを変更してください。**
