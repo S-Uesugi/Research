@@ -10,7 +10,6 @@
 #include <time.h>
 #include <filesystem>
 #include "kannan_tool.h"
-#include "weighted_LLL.h"
 
 using namespace std;
 using namespace NTL;

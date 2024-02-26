@@ -10,7 +10,6 @@
 #include <time.h>
 #include <filesystem>
 #include "kannan_tool.h"
-#include "weighted_LLL.h"
 
 using namespace std;
 using namespace NTL;
@@ -286,7 +285,8 @@ int main(int argc, char * argv[]){
     }
     mat_ZZ WB;
     WB.SetDims(2*dim+rotation,2*dim+rotation);
-    Weighted_BKZ(B,WB,w,beta,2*dim+rotation);
+    B = tools.ex_KannanEmbedding(lB,exp_b1[i],exp_b2[i],dim,mode,rotation,M);
+    long rank_B = BKZ_QP1(B,0.999,beta,10,0,1);
     vector<vec_ZZ> cand;
     double norm_error,norm_w,rhf;
     ZZ inner_error,inner_w;
