@@ -17,12 +17,16 @@
        ```
    2. makeコマンドを実行すると実行ファイルが出力されるので以下のコマンドを入力して実行 
        ```
-       nohup bash -c 'cat error_run.txt | xargs -P 5 -I {} bash exec.sh {}' &   
+       nohup bash -c 'cat runfiles.txt | xargs -P 5 -I {} bash exec.sh {}' &   
        ```
-      error_run.txtは適宜実行する実験に合わせて変更してください。
+      runfiles.txtは適宜実行する実験に合わせて変更してください。
 
-[runfile.txt]  
-./experiment.out {実験する代数体のパス} {Kannanの埋め込み定数} {rotation の回数} {ブロックサイズ}  
+[runfiles.txt]  
+実験するRing-LWEサンプルの変更やアルゴリズムに必要な各パラメータはrunfiles.txtに記載されています。  
+以下に例を示します。
+```
+./experiment.out {実験する代数体のパス} {Kannanの埋め込み定数} {rotation の回数} {ブロックサイズ}
+```
 * 実験する代数体のパスについて  
 0 : exp1_131_1021  
 1 : exp1_256_1021  
