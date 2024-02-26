@@ -9,12 +9,18 @@
    - **src** : 攻撃用のソースコードが入っているフォルダです。このフォルダ内には複数の実験が一括でできるように  
      &nbsp; &nbsp; &nbsp; runfiles.txt,exec.shが格納されています。
    - **result** : 攻撃結果として出力されるファイルを格納するフォルダです。
-2. **ソースコードの扱い方**  
-[実行コマンド]  
- ```
- nohup bash -c 'cat experiment.txt | xargs -P 5 -I {} bash exec.sh {}' &   
-```
-  
+2. **実行手順**
+   コードの実行は以下の通りになります。
+   1. ディレクトリsrcに入り、makeコマンドを実行
+       ```
+       make -f exp.mak
+       ```
+   2. makeコマンドを実行すると実行ファイルが出力されるので以下のコマンドを入力して実行 
+       ```
+       nohup bash -c 'cat error_run.txt | xargs -P 5 -I {} bash exec.sh {}' &   
+       ```
+      error_run.txtは適宜実行する実験に合わせて変更してください。
+
 [runfile.txt]  
 ./experiment.out {実験する代数体のパス} {Kannanの埋め込み定数} {rotation の回数} {ブロックサイズ}  
 * 実験する代数体のパスについて  
